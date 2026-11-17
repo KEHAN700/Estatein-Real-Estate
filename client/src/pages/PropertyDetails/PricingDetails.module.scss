@@ -1,0 +1,163 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: fluid(40px, 50px);
+}
+
+.note {
+  @include text-base;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: fluid(24px, 30px) fluid(40px, 50px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background-color: var(--surface);
+
+  strong {
+    @include title-sm;
+    flex-shrink: 0;
+    padding-right: 20px;
+    border-right: 1px solid var(--border);
+  }
+
+  span {
+    color: var(--text-muted);
+  }
+
+  @include down(md) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 20px;
+
+    strong {
+      padding: 0;
+      border: 0;
+    }
+  }
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: fluid(180px, 220px) minmax(0, 1fr);
+  gap: 50px;
+
+  @include down(lg) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+}
+
+.listing {
+  p {
+    @include text-lg;
+    color: var(--text-muted);
+  }
+
+  strong {
+    font-size: fluid(30px, 40px);
+    font-weight: 600;
+    line-height: 1.5;
+
+    @include down(md) {
+      font-size: 24px;
+    }
+  }
+}
+
+.groups {
+  display: flex;
+  flex-direction: column;
+  gap: fluid(30px, 50px);
+}
+
+.group {
+  padding: fluid(40px, 50px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  @include down(md) {
+    padding: 24px;
+  }
+}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: fluid(30px, 40px);
+  border-bottom: 1px solid var(--border);
+
+  h3 {
+    @include title-sm;
+  }
+
+  @include down(md) {
+    gap: 16px;
+  }
+}
+
+.row {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  padding-block: fluid(30px, 40px);
+  border-bottom: 1px solid var(--border);
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  @include down(md) {
+    grid-auto-flow: row;
+    gap: 20px;
+    padding-block: 20px;
+  }
+}
+
+.cell {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+
+  &:not(:last-child) {
+    padding-right: 20px;
+  }
+
+  & + & {
+    padding-left: 20px;
+    border-left: 1px solid var(--border);
+
+    @include down(md) {
+      margin: 0;
+      padding: 20px 0 0;
+      border-left: 0;
+      border-top: 1px solid var(--border);
+    }
+  }
+
+  dt {
+    @include text-base;
+    color: var(--text-muted);
+  }
+
+  dd {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+    margin: 0;
+  }
+}
+
+.value {
+  @include title-sm;
+}
+
+.light {
+  font-weight: 400;
+}
