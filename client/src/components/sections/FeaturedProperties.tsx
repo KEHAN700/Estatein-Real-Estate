@@ -19,8 +19,8 @@ export function FeaturedProperties() {
         title="Featured Properties"
         text={
           <>
-            Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional
-            homes and investments available through Estatein.{' '}
+            Explore our handpicked selection of featured properties. Each listing offers a glimpse
+            into exceptional homes and investments available through Estatein.{' '}
             <span className={s.desktopOnly}>Click "View Details" for more information.</span>
           </>
         }

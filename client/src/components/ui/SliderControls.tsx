@@ -17,7 +17,16 @@ interface Props {
   className?: string;
 }
 
-export function SliderControls({ page, pages, hasPrev, hasNext, onPrev, onNext, mobileAction, className }: Props) {
+export function SliderControls({
+  page,
+  pages,
+  hasPrev,
+  hasNext,
+  onPrev,
+  onNext,
+  mobileAction,
+  className,
+}: Props) {
   return (
     <div className={clsx(s.controls, className)}>
       <p className={s.counter}>
@@ -25,13 +34,25 @@ export function SliderControls({ page, pages, hasPrev, hasNext, onPrev, onNext, 
       </p>
       {mobileAction && <div className={s.action}>{mobileAction}</div>}
       <div className={s.buttons}>
-        <button type="button" className={s.arrow} onClick={onPrev} disabled={!hasPrev} aria-label="Previous">
+        <button
+          type="button"
+          className={s.arrow}
+          onClick={onPrev}
+          disabled={!hasPrev}
+          aria-label="Previous"
+        >
           <ArrowLeft />
         </button>
         <p className={clsx(s.counter, s.counterMobile)}>
           <span>{pad(page)}</span> of {pad(pages)}
         </p>
-        <button type="button" className={s.arrow} onClick={onNext} disabled={!hasNext} aria-label="Next">
+        <button
+          type="button"
+          className={s.arrow}
+          onClick={onNext}
+          disabled={!hasNext}
+          aria-label="Next"
+        >
           <ArrowRight />
         </button>
       </div>

@@ -31,7 +31,12 @@ export default function About() {
           </dl>
         </div>
         <div className={s.journeyImage}>
-          <img src={houseImage} alt="Model of a house held on an open palm" width={755} height={546} />
+          <img
+            src={houseImage}
+            alt="Model of a house held on an open palm"
+            width={755}
+            height={546}
+          />
         </div>
       </section>
 

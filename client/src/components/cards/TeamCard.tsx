@@ -15,7 +15,13 @@ export function TeamCard({ name, role, photo, twitter }: Props) {
     <article className={s.card}>
       <div className={s.media}>
         <img src={photo} alt={name} width={316} height={253} loading="lazy" />
-        <a href={twitter} target="_blank" rel="noreferrer" className={s.social} aria-label={`${name} on Twitter`}>
+        <a
+          href={twitter}
+          target="_blank"
+          rel="noreferrer"
+          className={s.social}
+          aria-label={`${name} on Twitter`}
+        >
           <TwitterIcon aria-hidden />
         </a>
       </div>

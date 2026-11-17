@@ -25,7 +25,11 @@ export default function Properties() {
   const page = Number(params.get('page')) || 1;
   const limit = isMobile ? 1 : isTablet ? 2 : 3;
 
-  const { data, isPending, isError, isPlaceholderData } = useProperties({ ...filters, page, limit });
+  const { data, isPending, isError, isPlaceholderData } = useProperties({
+    ...filters,
+    page,
+    limit,
+  });
 
   const update = (next: FilterValues, nextPage = 1) => {
     const search = new URLSearchParams();
@@ -51,7 +55,10 @@ export default function Properties() {
         {isPending && <Status state="loading" />}
         {isError && <Status state="error" />}
         {data && data.total === 0 && (
-          <Status state="empty" message="No properties match your search. Try changing the filters." />
+          <Status
+            state="empty"
+            message="No properties match your search. Try changing the filters."
+          />
         )}
 
         {data && data.total > 0 && (

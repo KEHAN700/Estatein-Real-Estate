@@ -34,7 +34,10 @@ export default function PropertyDetails() {
     const notFound = error instanceof ApiError && error.status === 404;
     return (
       <div className={`container ${s.page} ${s.missing}`}>
-        <Status state="error" message={notFound ? 'This property is no longer available.' : undefined} />
+        <Status
+          state="error"
+          message={notFound ? 'This property is no longer available.' : undefined}
+        />
         <Button to="/properties" variant="primary">
           Browse Properties
         </Button>

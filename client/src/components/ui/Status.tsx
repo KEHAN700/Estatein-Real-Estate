@@ -15,7 +15,10 @@ const defaults = {
 
 export function Status({ state, message, className }: Props) {
   return (
-    <div className={clsx(s.status, s[state], className)} role={state === 'error' ? 'alert' : 'status'}>
+    <div
+      className={clsx(s.status, s[state], className)}
+      role={state === 'error' ? 'alert' : 'status'}
+    >
       {state === 'loading' && <span className={s.spinner} aria-hidden />}
       <p>{message ?? defaults[state]}</p>
     </div>

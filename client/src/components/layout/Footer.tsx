@@ -96,7 +96,12 @@ function Subscribe() {
       <label className={s.input}>
         <MailIcon aria-hidden />
         <span className="visually-hidden">Email address</span>
-        <input type="email" placeholder="Enter Your Email" autoComplete="email" {...register('email')} />
+        <input
+          type="email"
+          placeholder="Enter Your Email"
+          autoComplete="email"
+          {...register('email')}
+        />
         <button type="submit" className={s.send} disabled={isPending} aria-label="Subscribe">
           <SendIcon aria-hidden />
         </button>
@@ -150,7 +155,13 @@ export function Footer() {
           <ul className={s.socials}>
             {socials.map(({ label, href, Icon }) => (
               <li key={label}>
-                <a href={href} target="_blank" rel="noreferrer" className={s.social} aria-label={label}>
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={s.social}
+                  aria-label={label}
+                >
                   <Icon aria-hidden />
                 </a>
               </li>

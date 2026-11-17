@@ -79,7 +79,22 @@ export const steps = [
 
 export const team = [
   { name: 'Max Mitchell', role: 'Founder', photo: maxMitchell, twitter: 'https://twitter.com' },
-  { name: 'Sarah Johnson', role: 'Chief Real Estate Officer', photo: sarahJohnson, twitter: 'https://twitter.com' },
-  { name: 'David Brown', role: 'Head of Property Management', photo: davidBrown, twitter: 'https://twitter.com' },
-  { name: 'Michael Turner', role: 'Legal Counsel', photo: michaelTurner, twitter: 'https://twitter.com' },
+  {
+    name: 'Sarah Johnson',
+    role: 'Chief Real Estate Officer',
+    photo: sarahJohnson,
+    twitter: 'https://twitter.com',
+  },
+  {
+    name: 'David Brown',
+    role: 'Head of Property Management',
+    photo: davidBrown,
+    twitter: 'https://twitter.com',
+  },
+  {
+    name: 'Michael Turner',
+    role: 'Legal Counsel',
+    photo: michaelTurner,
+    twitter: 'https://twitter.com',
+  },
 ];

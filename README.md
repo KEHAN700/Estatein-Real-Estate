@@ -19,14 +19,14 @@ A responsive real estate website built from the Estatein Figma design: six pages
 
 ## Pages
 
-| Route                | Page                                         |
-| -------------------- | -------------------------------------------- |
-| `/`                  | Home                                         |
-| `/about`             | About Us                                     |
-| `/properties`        | Property catalog with search                 |
-| `/properties/:slug`  | Property details                             |
-| `/services`          | Services                                     |
-| `/contact`           | Contact form, offices and gallery            |
+| Route               | Page                              |
+| ------------------- | --------------------------------- |
+| `/`                 | Home                              |
+| `/about`            | About Us                          |
+| `/properties`       | Property catalog with search      |
+| `/properties/:slug` | Property details                  |
+| `/services`         | Services                          |
+| `/contact`          | Contact form, offices and gallery |
 
 ## Getting started
 
@@ -81,19 +81,19 @@ server/
 
 ## API
 
-| Method | Endpoint                        | Description                                   |
-| ------ | ------------------------------- | --------------------------------------------- |
-| GET    | `/api/properties`               | List with `q, location, type, price, size, year, page, limit` |
-| GET    | `/api/properties/filters`       | Options for the filter selects                |
-| GET    | `/api/properties/:slug`         | Property with gallery and pricing breakdown   |
-| GET    | `/api/testimonials`             | Client testimonials                           |
-| GET    | `/api/faqs`                     | FAQ                                           |
-| GET    | `/api/clients`                  | Company clients                               |
-| GET    | `/api/offices?kind=`            | Offices, optionally `regional` / `international` |
-| POST   | `/api/forms/contact`            | Contact form                                  |
-| POST   | `/api/forms/property-request`   | "Let's Make it Happen" request                |
-| POST   | `/api/forms/property-inquiry`   | Inquiry about a specific property             |
-| POST   | `/api/forms/subscribe`          | Newsletter subscription                       |
+| Method | Endpoint                      | Description                                                   |
+| ------ | ----------------------------- | ------------------------------------------------------------- |
+| GET    | `/api/properties`             | List with `q, location, type, price, size, year, page, limit` |
+| GET    | `/api/properties/filters`     | Options for the filter selects                                |
+| GET    | `/api/properties/:slug`       | Property with gallery and pricing breakdown                   |
+| GET    | `/api/testimonials`           | Client testimonials                                           |
+| GET    | `/api/faqs`                   | FAQ                                                           |
+| GET    | `/api/clients`                | Company clients                                               |
+| GET    | `/api/offices?kind=`          | Offices, optionally `regional` / `international`              |
+| POST   | `/api/forms/contact`          | Contact form                                                  |
+| POST   | `/api/forms/property-request` | "Let's Make it Happen" request                                |
+| POST   | `/api/forms/property-inquiry` | Inquiry about a specific property                             |
+| POST   | `/api/forms/subscribe`        | Newsletter subscription                                       |
 
 Validation errors return `400` with a `fields` object, which the forms map back to the matching inputs.
 

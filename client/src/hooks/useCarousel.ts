@@ -8,7 +8,10 @@ interface Options {
 }
 
 // Pages through a list in chunks that depend on the screen size.
-export function useCarousel<T>(items: T[] = [], { desktop = 3, tablet = 2, mobile = 1 }: Options = {}) {
+export function useCarousel<T>(
+  items: T[] = [],
+  { desktop = 3, tablet = 2, mobile = 1 }: Options = {},
+) {
   const isTablet = useMediaQuery('(max-width: 1023.98px)');
   const isMobile = useMediaQuery('(max-width: 767.98px)');
   const perView = isMobile ? mobile : isTablet ? tablet : desktop;

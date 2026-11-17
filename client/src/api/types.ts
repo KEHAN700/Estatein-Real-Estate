@@ -23,7 +23,12 @@ export interface Pricing {
   listingPrice: number;
   fees: { transferTax: number; legal: number; inspection: number; insurance: number };
   monthly: { propertyTax: number; hoa: number; insurance: number };
-  initial: { additionalFees: number; downPayment: number; downPaymentRate: number; mortgage: number };
+  initial: {
+    additionalFees: number;
+    downPayment: number;
+    downPaymentRate: number;
+    mortgage: number;
+  };
 }
 
 export interface Property extends PropertySummary {

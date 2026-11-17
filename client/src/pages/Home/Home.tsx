@@ -18,7 +18,11 @@ const quickLinks = [
   { icon: <StorefrontIcon />, title: 'Find Your Dream Home', to: '/properties' },
   { icon: <CashIcon />, title: 'Unlock Property Value', to: '/services#selling' },
   { icon: <BuildingsIcon />, title: 'Effortless Property Management', to: '/services#management' },
-  { icon: <SunIcon />, title: 'Smart Investments, Informed Decisions', to: '/services#investments' },
+  {
+    icon: <SunIcon />,
+    title: 'Smart Investments, Informed Decisions',
+    to: '/services#investments',
+  },
 ];
 
 export default function Home() {
@@ -31,8 +35,8 @@ export default function Home() {
           <div className={s.intro}>
             <h1 className={s.title}>Discover Your Dream Property with Estatein</h1>
             <p className={s.text}>
-              Your journey to finding the perfect property begins here. Explore our listings to find the home that
-              matches your dreams.
+              Your journey to finding the perfect property begins here. Explore our listings to find
+              the home that matches your dreams.
             </p>
           </div>
 

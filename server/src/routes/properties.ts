@@ -6,7 +6,8 @@ import { getPricing } from '../lib/pricing.js';
 
 const router = Router();
 
-const toListItem = ({ description, features, gallery, ...item }: (typeof properties)[number]) => item;
+const toListItem = ({ description, features, gallery, ...item }: (typeof properties)[number]) =>
+  item;
 
 const unique = (values: string[]) => [...new Set(values)].sort();
 

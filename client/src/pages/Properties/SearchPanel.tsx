@@ -14,7 +14,12 @@ import s from './SearchPanel.module.scss';
 export type FilterKey = 'location' | 'type' | 'price' | 'size' | 'year';
 export type FilterValues = Partial<Record<FilterKey | 'q', string>>;
 
-const filterConfig: { key: FilterKey; source: keyof PropertyFilters; label: string; Icon: ComponentType<SVGProps<SVGSVGElement>> }[] = [
+const filterConfig: {
+  key: FilterKey;
+  source: keyof PropertyFilters;
+  label: string;
+  Icon: ComponentType<SVGProps<SVGSVGElement>>;
+}[] = [
   { key: 'location', source: 'locations', label: 'Location', Icon: PinIcon },
   { key: 'type', source: 'types', label: 'Property Type', Icon: HouseIcon },
   { key: 'price', source: 'prices', label: 'Pricing Range', Icon: BanknoteIcon },
@@ -55,7 +60,12 @@ export function SearchPanel({ values, onChange }: Props) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <Button type="submit" variant="primary" icon={<SearchIcon aria-hidden />} className={s.submit}>
+        <Button
+          type="submit"
+          variant="primary"
+          icon={<SearchIcon aria-hidden />}
+          className={s.submit}
+        >
           <span className={s.submitLabel}>Find Property</span>
         </Button>
       </form>

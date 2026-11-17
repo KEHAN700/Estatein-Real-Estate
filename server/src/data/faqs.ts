@@ -4,7 +4,8 @@ export const faqs: Faq[] = [
   {
     id: 1,
     question: 'How do I search for properties on Estatein?',
-    teaser: 'Learn how to use our user-friendly search tools to find properties that match your criteria.',
+    teaser:
+      'Learn how to use our user-friendly search tools to find properties that match your criteria.',
     answer:
       'Head to the Properties page and type a city, neighborhood or property name into the search bar. You can narrow the results with the filters for location, property type, price range, size and build year.',
   },

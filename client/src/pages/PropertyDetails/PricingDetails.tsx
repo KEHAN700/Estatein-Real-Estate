@@ -48,8 +48,8 @@ export function PricingDetails({ pricing }: { pricing: Pricing }) {
       <p className={s.note}>
         <strong>Note</strong>
         <span>
-          The figures provided above are estimates and may vary depending on the property, location, and individual
-          circumstances.
+          The figures provided above are estimates and may vary depending on the property, location,
+          and individual circumstances.
         </span>
       </p>
 
@@ -64,21 +64,55 @@ export function PricingDetails({ pricing }: { pricing: Pricing }) {
             title="Additional Fees"
             rows={[
               [
-                { label: 'Property Transfer Tax', value: formatPrice(fees.transferTax), note: 'Based on the sale price and local regulations' },
-                { label: 'Legal Fees', value: formatPrice(fees.legal), note: 'Approximate cost for legal services, including title transfer' },
+                {
+                  label: 'Property Transfer Tax',
+                  value: formatPrice(fees.transferTax),
+                  note: 'Based on the sale price and local regulations',
+                },
+                {
+                  label: 'Legal Fees',
+                  value: formatPrice(fees.legal),
+                  note: 'Approximate cost for legal services, including title transfer',
+                },
               ],
               [
-                { label: 'Home Inspection', value: formatPrice(fees.inspection), note: 'Recommended for due diligence' },
-                { label: 'Property Insurance', value: formatPrice(fees.insurance), note: 'Annual cost for comprehensive property insurance' },
+                {
+                  label: 'Home Inspection',
+                  value: formatPrice(fees.inspection),
+                  note: 'Recommended for due diligence',
+                },
+                {
+                  label: 'Property Insurance',
+                  value: formatPrice(fees.insurance),
+                  note: 'Annual cost for comprehensive property insurance',
+                },
               ],
-              [{ label: 'Mortgage Fees', value: 'Varies', note: 'If applicable, consult with your lender for specific details' }],
+              [
+                {
+                  label: 'Mortgage Fees',
+                  value: 'Varies',
+                  note: 'If applicable, consult with your lender for specific details',
+                },
+              ],
             ]}
           />
           <PriceGroup
             title="Monthly Costs"
             rows={[
-              [{ label: 'Property Taxes', value: formatPrice(monthly.propertyTax), note: 'Approximate monthly property tax based on the sale price and local rates' }],
-              [{ label: "Homeowners' Association Fee", value: formatPrice(monthly.hoa), note: 'Monthly fee for common area maintenance and security' }],
+              [
+                {
+                  label: 'Property Taxes',
+                  value: formatPrice(monthly.propertyTax),
+                  note: 'Approximate monthly property tax based on the sale price and local rates',
+                },
+              ],
+              [
+                {
+                  label: "Homeowners' Association Fee",
+                  value: formatPrice(monthly.hoa),
+                  note: 'Monthly fee for common area maintenance and security',
+                },
+              ],
             ]}
           />
           <PriceGroup
@@ -86,11 +120,23 @@ export function PricingDetails({ pricing }: { pricing: Pricing }) {
             rows={[
               [
                 { label: 'Listing Price', value: formatPrice(pricing.listingPrice) },
-                { label: 'Additional Fees', value: formatPrice(initial.additionalFees), note: 'Property transfer tax, legal fees, inspection, insurance' },
+                {
+                  label: 'Additional Fees',
+                  value: formatPrice(initial.additionalFees),
+                  note: 'Property transfer tax, legal fees, inspection, insurance',
+                },
               ],
               [
-                { label: 'Down Payment', value: formatPrice(initial.downPayment), note: `${initial.downPaymentRate * 100}%` },
-                { label: 'Mortgage Amount', value: formatPrice(initial.mortgage), note: 'If applicable' },
+                {
+                  label: 'Down Payment',
+                  value: formatPrice(initial.downPayment),
+                  note: `${initial.downPaymentRate * 100}%`,
+                },
+                {
+                  label: 'Mortgage Amount',
+                  value: formatPrice(initial.mortgage),
+                  note: 'If applicable',
+                },
               ],
             ]}
           />
@@ -102,8 +148,16 @@ export function PricingDetails({ pricing }: { pricing: Pricing }) {
                 { label: "Homeowners' Association Fee", value: formatPrice(monthly.hoa) },
               ],
               [
-                { label: 'Mortgage Payment', value: <span className={s.light}>Varies based on terms and interest rate</span>, note: 'If applicable' },
-                { label: 'Property Insurance', value: formatPrice(monthly.insurance), note: 'Approximate monthly cost' },
+                {
+                  label: 'Mortgage Payment',
+                  value: <span className={s.light}>Varies based on terms and interest rate</span>,
+                  note: 'If applicable',
+                },
+                {
+                  label: 'Property Insurance',
+                  value: formatPrice(monthly.insurance),
+                  note: 'Approximate monthly cost',
+                },
               ],
             ]}
           />

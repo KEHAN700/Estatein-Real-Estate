@@ -29,9 +29,15 @@ const contactLinks = [
     icon: <LogoMark />,
     title: (
       <span className={s.socials}>
-        <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-        <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="https://instagram.com" target="_blank" rel="noreferrer">
+          Instagram
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+          LinkedIn
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noreferrer">
+          Facebook
+        </a>
       </span>
     ),
   },
@@ -111,9 +117,19 @@ export default function Contact() {
           <div className={s.photos}>
             <img src={office} alt="Estatein open-plan office" className={s.office} loading="lazy" />
             <img src={teamWide} alt="Estatein agents" className={s.teamWide} loading="lazy" />
-            <img src={meeting} alt="Team meeting around a table" className={s.meeting} loading="lazy" />
+            <img
+              src={meeting}
+              alt="Team meeting around a table"
+              className={s.meeting}
+              loading="lazy"
+            />
             <img src={teamGroup} alt="Estatein sales team" className={s.teamGroup} loading="lazy" />
-            <img src={teamPortrait} alt="Estatein management team" className={s.teamPortrait} loading="lazy" />
+            <img
+              src={teamPortrait}
+              alt="Estatein management team"
+              className={s.teamPortrait}
+              loading="lazy"
+            />
           </div>
           <div className={s.galleryBottom}>
             <SectionHeader
@@ -121,7 +137,12 @@ export default function Contact() {
               title="Explore Estatein's World"
               text="Step inside the world of Estatein, where professionalism meets warmth, and expertise meets passion. Our gallery offers a glimpse into our team and workspaces, inviting you to get to know us better."
             />
-            <img src={handshake} alt="Agent shaking hands with a client" className={s.handshake} loading="lazy" />
+            <img
+              src={handshake}
+              alt="Agent shaking hands with a client"
+              className={s.handshake}
+              loading="lazy"
+            />
           </div>
         </div>
       </section>

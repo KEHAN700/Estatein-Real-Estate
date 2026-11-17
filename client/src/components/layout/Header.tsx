@@ -48,7 +48,10 @@ export function Header() {
           </ul>
         </nav>
 
-        <NavLink to="/contact" className={({ isActive }) => clsx(s.contact, isActive && s.contactActive)}>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) => clsx(s.contact, isActive && s.contactActive)}
+        >
           Contact Us
         </NavLink>
 

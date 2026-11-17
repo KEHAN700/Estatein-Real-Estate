@@ -6,17 +6,35 @@ const content = {
   terms: {
     title: 'Terms of Use',
     sections: [
-      ['Using the website', 'By using Estatein you agree to these terms. The listings, prices and descriptions on this site are provided for information only and may change without notice.'],
-      ['Listings and pricing', 'We do our best to keep every listing accurate, but final prices, availability and fees are confirmed only in a signed agreement with the property owner.'],
-      ['Your account and messages', 'When you send us a request you confirm that the details you provide are correct and that you are allowed to share them.'],
+      [
+        'Using the website',
+        'By using Estatein you agree to these terms. The listings, prices and descriptions on this site are provided for information only and may change without notice.',
+      ],
+      [
+        'Listings and pricing',
+        'We do our best to keep every listing accurate, but final prices, availability and fees are confirmed only in a signed agreement with the property owner.',
+      ],
+      [
+        'Your account and messages',
+        'When you send us a request you confirm that the details you provide are correct and that you are allowed to share them.',
+      ],
     ],
   },
   privacy: {
     title: 'Privacy Policy',
     sections: [
-      ['What we collect', 'We only store the information you send through our forms: your name, contact details and message.'],
-      ['How we use it', 'Your details are used to answer your request and, if you subscribed, to send you our newsletter. We never sell your data.'],
-      ['Your rights', 'You can ask us to update or delete your information at any time by writing to info@estatein.com.'],
+      [
+        'What we collect',
+        'We only store the information you send through our forms: your name, contact details and message.',
+      ],
+      [
+        'How we use it',
+        'Your details are used to answer your request and, if you subscribed, to send you our newsletter. We never sell your data.',
+      ],
+      [
+        'Your rights',
+        'You can ask us to update or delete your information at any time by writing to info@estatein.com.',
+      ],
     ],
   },
 };

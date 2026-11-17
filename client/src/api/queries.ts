@@ -56,5 +56,5 @@ export const useOffices = (kind?: OfficeKind) =>
 
 export type FormName = 'contact' | 'property-request' | 'property-inquiry' | 'subscribe';
 
-export const useSubmitForm = <T,>(form: FormName) =>
+export const useSubmitForm = <T>(form: FormName) =>
   useMutation({ mutationFn: (values: T) => http.post<FormResponse>(`/forms/${form}`, values) });

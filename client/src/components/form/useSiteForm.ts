@@ -8,8 +8,16 @@ import { useSubmitForm, type FormName } from '@/api/queries';
 type Feedback = { type: 'success' | 'error'; text: string } | null;
 
 // react-hook-form + zod + API mutation, with server-side field errors mapped back
-export function useSiteForm<T extends FieldValues>(name: FormName, schema: ZodType<T, T>, defaults: DefaultValues<T>) {
-  const form = useForm<T>({ resolver: zodResolver(schema), defaultValues: defaults, mode: 'onTouched' });
+export function useSiteForm<T extends FieldValues>(
+  name: FormName,
+  schema: ZodType<T, T>,
+  defaults: DefaultValues<T>,
+) {
+  const form = useForm<T>({
+    resolver: zodResolver(schema),
+    defaultValues: defaults,
+    mode: 'onTouched',
+  });
   const mutation = useSubmitForm<T>(name);
   const [feedback, setFeedback] = useState<Feedback>(null);
 
@@ -26,7 +34,10 @@ export function useSiteForm<T extends FieldValues>(name: FormName, schema: ZodTy
         );
         setFeedback({ type: 'error', text: err.message });
       } else {
-        setFeedback({ type: 'error', text: 'Network error. Please check your connection and try again.' });
+        setFeedback({
+          type: 'error',
+          text: 'Network error. Please check your connection and try again.',
+        });
       }
     }
   });

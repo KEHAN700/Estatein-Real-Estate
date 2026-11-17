@@ -54,7 +54,13 @@ export function Gallery({ images, title }: Props) {
       </div>
 
       <div className={s.controls}>
-        <button type="button" className={s.arrow} onClick={() => go(current - 1)} disabled={current === 0} aria-label="Previous photos">
+        <button
+          type="button"
+          className={s.arrow}
+          onClick={() => go(current - 1)}
+          disabled={current === 0}
+          aria-label="Previous photos"
+        >
           <ArrowLeft />
         </button>
         <div className={s.dots}>
@@ -68,7 +74,13 @@ export function Gallery({ images, title }: Props) {
             />
           ))}
         </div>
-        <button type="button" className={s.arrow} onClick={() => go(current + 1)} disabled={current === pages - 1} aria-label="Next photos">
+        <button
+          type="button"
+          className={s.arrow}
+          onClick={() => go(current + 1)}
+          disabled={current === pages - 1}
+          aria-label="Next photos"
+        >
           <ArrowRight />
         </button>
       </div>

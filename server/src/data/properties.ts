@@ -2,7 +2,13 @@ import type { Property } from '../types.js';
 
 const img = (name: string) => `/images/properties/${name}.webp`;
 
-const sharedInterior = [img('living-room'), img('loft'), img('dining'), img('open-plan'), img('bedroom')];
+const sharedInterior = [
+  img('living-room'),
+  img('loft'),
+  img('dining'),
+  img('open-plan'),
+  img('bedroom'),
+];
 
 export const properties: Property[] = [
   {
@@ -82,7 +88,8 @@ export const properties: Property[] = [
     builtYear: 2008,
     tagline: "Countryside Charm - Escape to Nature's Embrace",
     summary: 'An elegant 3-bedroom, 2.5-bathroom townhouse in a gated community',
-    excerpt: 'Find tranquility in the countryside. This charming cottage is nestled amidst rolling hills',
+    excerpt:
+      'Find tranquility in the countryside. This charming cottage is nestled amidst rolling hills',
     description:
       'Rustic Retreat Cottage is made for slow mornings and long dinners. Warm wood finishes, a stone fireplace and a wraparound porch overlooking the hills make it an easy place to unplug.',
     features: [
@@ -121,7 +128,13 @@ export const properties: Property[] = [
       'Three-car garage',
     ],
     cover: img('modern-villa'),
-    gallery: [img('modern-villa'), img('villa-pool'), img('lounge'), img('open-plan'), img('bedroom')],
+    gallery: [
+      img('modern-villa'),
+      img('villa-pool'),
+      img('lounge'),
+      img('open-plan'),
+      img('bedroom'),
+    ],
     featured: false,
   },
   {
@@ -149,7 +162,13 @@ export const properties: Property[] = [
       'Walking distance to the marina',
     ],
     cover: img('resort-pool'),
-    gallery: [img('resort-pool'), img('villa-pool'), img('living-room'), img('dining'), img('bedroom')],
+    gallery: [
+      img('resort-pool'),
+      img('villa-pool'),
+      img('living-room'),
+      img('dining'),
+      img('bedroom'),
+    ],
     featured: false,
   },
   {

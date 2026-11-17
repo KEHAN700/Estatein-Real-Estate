@@ -7,7 +7,12 @@ import { ServiceCard } from '@/components/cards/ServiceCard';
 import { PageIntro } from '@/components/sections/PageIntro';
 import { QuickLinks } from '@/components/sections/QuickLinks';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { investmentServices, managementServices, sellingServices, type Service } from '@/data/services';
+import {
+  investmentServices,
+  managementServices,
+  sellingServices,
+  type Service,
+} from '@/data/services';
 import { usePageTitle } from '@/hooks/usePageTitle';
 import s from './Services.module.scss';
 
