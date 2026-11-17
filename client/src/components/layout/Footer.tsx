@@ -72,7 +72,7 @@ const socials = [
   { label: 'YouTube', href: 'https://youtube.com', Icon: YoutubeIcon },
 ];
 
-const subscribeSchema = z.object({ email: z.string().trim().email('Enter a valid email') });
+const subscribeSchema = z.object({ email: z.string().trim().pipe(z.email('Enter a valid email')) });
 
 function Subscribe() {
   const { register, handleSubmit, reset, formState } = useForm<{ email: string }>({

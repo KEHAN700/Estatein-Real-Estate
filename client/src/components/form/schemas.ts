@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 const name = z.string().trim().min(2, 'Too short').max(50, 'Too long');
-const email = z.string().trim().min(1, 'Email is required').email('Enter a valid email');
+const email = z.string().trim().min(1, 'Email is required').pipe(z.email('Enter a valid email'));
 const phone = z
   .string()
   .trim()

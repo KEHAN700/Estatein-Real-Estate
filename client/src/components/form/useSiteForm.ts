@@ -8,7 +8,7 @@ import { useSubmitForm, type FormName } from '@/api/queries';
 type Feedback = { type: 'success' | 'error'; text: string } | null;
 
 // react-hook-form + zod + API mutation, with server-side field errors mapped back
-export function useSiteForm<T extends FieldValues>(name: FormName, schema: ZodType<T>, defaults: DefaultValues<T>) {
+export function useSiteForm<T extends FieldValues>(name: FormName, schema: ZodType<T, T>, defaults: DefaultValues<T>) {
   const form = useForm<T>({ resolver: zodResolver(schema), defaultValues: defaults, mode: 'onTouched' });
   const mutation = useSubmitForm<T>(name);
   const [feedback, setFeedback] = useState<Feedback>(null);
