@@ -1,5 +1,6 @@
 import cors from 'cors';
 import express from 'express';
+import { rateLimit } from 'express-rate-limit';
 import helmet from 'helmet';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
@@ -16,7 +17,25 @@ export function createApp() {
   const app = express();
 
   app.disable('x-powered-by');
-  app.use(helmet({ contentSecurityPolicy: false, crossOriginResourcePolicy: false }));
+  // needed for correct client IPs (rate limiting) when running behind a proxy like Render or Nginx
+  if (process.env.TRUST_PROXY) app.set('trust proxy', Number(process.env.TRUST_PROXY) || 1);
+
+  app.use(
+    helmet({
+      crossOriginResourcePolicy: { policy: 'cross-origin' },
+      contentSecurityPolicy: {
+        directives: {
+          defaultSrc: ["'self'"],
+          imgSrc: ["'self'", 'data:'],
+          styleSrc: ["'self'", "'unsafe-inline'"],
+          fontSrc: ["'self'", 'data:'],
+          connectSrc: ["'self'"],
+          objectSrc: ["'none'"],
+          frameAncestors: ["'none'"],
+        },
+      },
+    }),
+  );
   app.use(cors({ origin: process.env.CLIENT_ORIGIN ?? 'http://localhost:5173' }));
   app.use(express.json({ limit: '100kb' }));
 
@@ -25,7 +44,17 @@ export function createApp() {
   app.get('/api/health', (_req, res) => res.json({ status: 'ok' }));
   app.use('/api/properties', properties);
   app.use('/api', content);
-  app.use('/api/forms', forms);
+  app.use(
+    '/api/forms',
+    rateLimit({
+      windowMs: 60 * 1000,
+      limit: 10,
+      standardHeaders: 'draft-8',
+      legacyHeaders: false,
+      message: { message: 'Too many requests. Please wait a minute and try again.' },
+    }),
+    forms,
+  );
   app.use('/api', (_req, res) => res.status(404).json({ message: 'Not found' }));
 
   // In production the API also serves the built client

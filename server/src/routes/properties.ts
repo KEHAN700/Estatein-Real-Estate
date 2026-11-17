@@ -10,10 +10,15 @@ const toListItem = ({ description, features, gallery, ...item }: (typeof propert
 
 const unique = (values: string[]) => [...new Set(values)].sort();
 
+// ?q=a&q=b turns into an array in Express, only plain strings are accepted
+const param = (value: unknown) => (typeof value === 'string' ? value : undefined);
+
 router.get('/', (req, res) => {
-  const { q, location, type, price, size, year, featured } = req.query as Record<string, string | undefined>;
-  const page = Math.max(1, Number(req.query.page) || 1);
-  const limit = Math.min(24, Math.max(1, Number(req.query.limit) || 9));
+  const [q, location, type, price, size, year, featured] = (
+    ['q', 'location', 'type', 'price', 'size', 'year', 'featured'] as const
+  ).map((key) => param(req.query[key]));
+  const page = Math.max(1, Number(param(req.query.page)) || 1);
+  const limit = Math.min(24, Math.max(1, Number(param(req.query.limit)) || 9));
   const search = q?.trim().toLowerCase();
 
   const filtered = properties.filter((p) => {

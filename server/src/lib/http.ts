@@ -1,5 +1,5 @@
 import type { NextFunction, Request, RequestHandler, Response } from 'express';
-import { ZodError, type ZodSchema } from 'zod';
+import { ZodError, type ZodType } from 'zod';
 
 export class HttpError extends Error {
   constructor(
@@ -17,7 +17,7 @@ export const asyncHandler =
   };
 
 export const validateBody =
-  (schema: ZodSchema): RequestHandler =>
+  (schema: ZodType): RequestHandler =>
   (req, _res, next) => {
     req.body = schema.parse(req.body);
     next();
