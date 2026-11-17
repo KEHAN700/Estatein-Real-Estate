@@ -1,0 +1,90 @@
+@use 'breakpoints' as *;
+@use 'functions' as *;
+
+@mixin card($padding: fluid(30px, 40px)) {
+  padding: $padding;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg);
+
+  @include down(md) {
+    padding: 24px;
+  }
+}
+
+@mixin text-sm {
+  font-size: fluid(14px, 18px);
+  line-height: 1.5;
+
+  @include down(md) {
+    font-size: 14px;
+  }
+}
+
+@mixin text-base {
+  font-size: fluid(16px, 18px);
+  line-height: 1.5;
+
+  @include down(md) {
+    font-size: 14px;
+  }
+}
+
+@mixin text-lg {
+  font-size: fluid(18px, 20px);
+  line-height: 1.5;
+
+  @include down(md) {
+    font-size: 16px;
+  }
+}
+
+@mixin title-sm {
+  font-size: fluid(20px, 24px);
+  font-weight: 600;
+  line-height: 1.5;
+
+  @include down(md) {
+    font-size: 18px;
+  }
+}
+
+@mixin title-md {
+  font-size: fluid(24px, 30px);
+  font-weight: 600;
+  line-height: 1.5;
+
+  @include down(md) {
+    font-size: 20px;
+  }
+}
+
+@mixin title-lg {
+  font-size: fluid(38px, 48px);
+  font-weight: 600;
+  line-height: 1.5;
+
+  @include down(md) {
+    font-size: 28px;
+  }
+}
+
+@mixin hide-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--purple-75);
+    outline-offset: 2px;
+  }
+}
+
+@mixin pattern($file) {
+  background-image: url('@/assets/patterns/#{$file}.svg');
+  background-repeat: no-repeat;
+}

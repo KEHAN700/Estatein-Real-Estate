@@ -1,0 +1,31 @@
+.stars {
+  display: flex;
+  gap: fluid(8px, 10px);
+}
+
+.star {
+  display: grid;
+  place-items: center;
+  width: fluid(38px, 44px);
+  aspect-ratio: 1;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background-color: var(--surface);
+
+  svg {
+    width: fluid(18px, 24px);
+    height: auto;
+  }
+
+  &[data-active='false'] svg {
+    filter: grayscale(1) brightness(0.5);
+  }
+
+  @include down(md) {
+    width: 30px;
+
+    svg {
+      width: 16px;
+    }
+  }
+}

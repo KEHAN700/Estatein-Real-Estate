@@ -1,0 +1,9 @@
+@use 'sass:math';
+
+// Scales a value between the laptop (1440) and desktop (1920) layouts.
+// Below 1440 it stays at $min, mobile overrides are written explicitly.
+@function fluid($min, $max, $from: 1440px, $to: 1920px) {
+  $slope: math.div($max - $min, $to - $from);
+  $base: $min - $slope * $from;
+  @return clamp(#{$min}, #{$base} + #{$slope * 100vw}, #{$max});
+}

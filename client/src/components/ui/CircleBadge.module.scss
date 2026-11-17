@@ -1,0 +1,64 @@
+.badge {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: fluid(129px, 175px);
+  aspect-ratio: 1;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  background-color: var(--bg);
+
+  @include down(md) {
+    width: 117px;
+  }
+
+  &:hover .center {
+    background-color: var(--grey-15);
+
+    svg {
+      transform: translate(2px, -2px);
+    }
+  }
+}
+
+.ring {
+  position: absolute;
+  inset: 8%;
+  width: 84%;
+  height: 84%;
+  animation: rotate 20s linear infinite;
+
+  text {
+    font-size: 10.4px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    fill: var(--white);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+.center {
+  display: grid;
+  place-items: center;
+  width: 45%;
+  aspect-ratio: 1;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  background-color: var(--surface);
+  transition: background-color 0.25s;
+
+  svg {
+    width: 43%;
+    height: auto;
+    transition: transform 0.25s var(--ease);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

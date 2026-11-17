@@ -1,0 +1,49 @@
+@mixin ring {
+  position: relative;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, var(--purple-75) 0%, rgb(166 133 250 / 0) 60%);
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+.badge {
+  @include ring;
+  flex-shrink: 0;
+  width: fluid(60px, 82px);
+  padding: fluid(6px, 10px);
+
+  @include down(md) {
+    width: 48px;
+    padding: 6px;
+  }
+}
+
+.inner {
+  @include ring;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: var(--surface);
+  color: var(--purple-75);
+
+  svg {
+    width: fluid(24px, 34px);
+    height: auto;
+
+    @include down(md) {
+      width: 20px;
+    }
+  }
+}

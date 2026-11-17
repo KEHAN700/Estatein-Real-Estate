@@ -1,0 +1,13 @@
+.main {
+  flex: 1;
+
+  :global([id]) {
+    scroll-margin-top: calc(var(--header-height) + 40px);
+  }
+}
+
+.fallback {
+  min-height: 60vh;
+  margin: 40px var(--gutter);
+  border: 0;
+}

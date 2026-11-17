@@ -1,0 +1,92 @@
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: fluid(40px, 50px);
+  padding-top: fluid(16px, 20px);
+  border-top: 1px solid var(--border);
+
+  @include down(md) {
+    margin-top: 30px;
+  }
+}
+
+.counter {
+  @include text-lg;
+  color: var(--text-muted);
+
+  span {
+    color: var(--text);
+  }
+}
+
+.counterMobile {
+  display: none;
+  font-size: 16px;
+}
+
+.action {
+  display: none;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.arrow {
+  display: grid;
+  place-items: center;
+  width: fluid(44px, 58px);
+  aspect-ratio: 1;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background-color: var(--surface);
+  transition:
+    background-color 0.2s,
+    opacity 0.2s;
+  @include focus-ring;
+
+  svg {
+    width: fluid(24px, 30px);
+    height: auto;
+    color: var(--white);
+  }
+
+  &:hover:not(:disabled) {
+    background-color: var(--grey-15);
+  }
+
+  &:disabled {
+    background-color: transparent;
+    cursor: default;
+
+    svg {
+      color: var(--grey-60);
+    }
+  }
+}
+
+@include down(md) {
+  .controls > .counter {
+    display: none;
+  }
+
+  .counterMobile {
+    display: block;
+  }
+
+  .action {
+    display: block;
+  }
+
+  .arrow {
+    width: 44px;
+
+    svg {
+      width: 24px;
+    }
+  }
+}

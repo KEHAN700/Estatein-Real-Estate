@@ -1,0 +1,26 @@
+.chip {
+  @include text-sm;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  background-color: var(--surface);
+  white-space: nowrap;
+
+  svg {
+    width: fluid(20px, 24px);
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  @include up(xxl) {
+    padding-block: 8px;
+  }
+}
+
+.muted {
+  color: var(--text-muted);
+  white-space: normal;
+}

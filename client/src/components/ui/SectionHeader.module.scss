@@ -1,0 +1,56 @@
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: fluid(150px, 200px);
+  margin-bottom: fluid(60px, 80px);
+
+  @include down(lg) {
+    gap: 40px;
+  }
+
+  @include down(md) {
+    margin-bottom: 40px;
+  }
+}
+
+.text {
+  position: relative;
+  max-width: 1300px;
+}
+
+.mark {
+  position: absolute;
+  top: -40px;
+  left: -20px;
+  width: 68px;
+  height: auto;
+
+  @include down(md) {
+    top: -26px;
+    left: -8px;
+    width: 46px;
+  }
+}
+
+.title {
+  @include title-lg;
+}
+
+.description {
+  @include text-base;
+  margin-top: 14px;
+  color: var(--text-muted);
+
+  @include down(md) {
+    margin-top: 6px;
+  }
+}
+
+.action {
+  flex-shrink: 0;
+
+  @include down(md) {
+    display: none;
+  }
+}
