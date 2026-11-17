@@ -1,0 +1,29 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: fluid(20px, 30px);
+  height: 100%;
+  padding: fluid(40px, 50px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  @include down(md) {
+    gap: 16px;
+    padding: 24px;
+  }
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: fluid(16px, 20px);
+}
+
+.title {
+  @include title-sm;
+}
+
+.text {
+  @include text-base;
+  color: var(--text-muted);
+}

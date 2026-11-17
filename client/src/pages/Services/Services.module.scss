@@ -1,0 +1,67 @@
+.section {
+  margin-top: var(--section-gap);
+}
+
+.flatHeader {
+  margin-bottom: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: fluid(20px, 30px);
+
+  @include down(lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include down(md) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.wide {
+  grid-column: span 2;
+
+  @include down(lg) {
+    grid-column: 1 / -1;
+  }
+}
+
+.investments {
+  display: grid;
+  grid-template-columns: minmax(0, 519fr) minmax(0, 1017fr);
+  align-items: center;
+  gap: fluid(40px, 60px);
+
+  @include down(lg) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.investmentsIntro {
+  display: flex;
+  flex-direction: column;
+  gap: fluid(40px, 50px);
+
+  h2 {
+    line-height: 1.5;
+  }
+}
+
+.investmentsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+  border-radius: var(--radius-lg);
+  background-color: var(--surface);
+
+  @include down(md) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.filled {
+  background-color: var(--bg);
+}
