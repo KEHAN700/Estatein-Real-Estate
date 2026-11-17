@@ -1,0 +1,99 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: fluid(24px, 30px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  @include down(md) {
+    padding: 20px;
+  }
+}
+
+.media {
+  position: relative;
+
+  img {
+    width: 100%;
+    aspect-ratio: 316 / 253;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.social {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  padding: fluid(10px, 14px) fluid(20px, 26px);
+  border-radius: 43px;
+  background-color: var(--purple-60);
+  transform: translate(-50%, 50%);
+  transition: background-color 0.2s;
+
+  svg {
+    width: fluid(20px, 24px);
+    height: auto;
+  }
+
+  &:hover {
+    background-color: var(--purple-65);
+  }
+}
+
+.info {
+  margin-top: fluid(40px, 50px);
+  text-align: center;
+}
+
+.name {
+  @include title-sm;
+  line-height: 1.2;
+}
+
+.role {
+  @include text-sm;
+  margin-top: 6px;
+  color: var(--text-muted);
+}
+
+.hello {
+  @include text-sm;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: fluid(20px, 24px);
+  padding: fluid(10px, 14px) fluid(10px, 14px) fluid(10px, 14px) 24px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  background-color: var(--surface);
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: var(--purple-60);
+
+    .send {
+      transform: rotate(-12deg);
+    }
+  }
+}
+
+.send {
+  display: grid;
+  place-items: center;
+  width: fluid(34px, 44px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--purple-60);
+  transition: transform 0.2s;
+
+  svg {
+    width: fluid(20px, 24px);
+    height: auto;
+  }
+}

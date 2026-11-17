@@ -1,0 +1,318 @@
+.section {
+  margin-top: var(--section-gap);
+}
+
+.flatHeader {
+  margin-bottom: 0;
+}
+
+.journey {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: fluid(60px, 80px);
+  padding-top: fluid(100px, 100px);
+
+  @include down(lg) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  @include down(md) {
+    padding-top: 40px;
+  }
+}
+
+.journeyText {
+  display: flex;
+  flex-direction: column;
+  gap: fluid(60px, 80px);
+
+  @include down(md) {
+    gap: 40px;
+  }
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: fluid(16px, 20px);
+
+  > * {
+    padding-block: fluid(20px, 24px);
+  }
+
+  @include down(md) {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+
+    > :last-child {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.journeyImage {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg);
+  @include pattern('about-lines');
+  background-position: center;
+  background-size: 210% auto;
+
+  img {
+    width: 100%;
+    aspect-ratio: 755 / 546;
+    object-fit: cover;
+  }
+
+  @include down(lg) {
+    order: -1;
+  }
+}
+
+.values {
+  display: grid;
+  grid-template-columns: minmax(0, 517fr) minmax(0, 999fr);
+  align-items: center;
+  gap: fluid(60px, 80px);
+  margin-top: var(--section-gap);
+
+  @include down(lg) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+}
+
+.valuesCard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: fluid(40px, 60px) 0;
+  padding: fluid(40px, 60px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg);
+  box-shadow: 0 0 0 fluid(6px, 10px) #191919;
+
+  @include down(md) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 24px;
+    box-shadow: 0 0 0 4px #191919;
+  }
+}
+
+.value {
+  display: flex;
+  flex-direction: column;
+  gap: fluid(16px, 20px);
+
+  p {
+    @include text-base;
+    color: var(--text-muted);
+  }
+
+  // dividers between the four cells
+  &:nth-child(odd) {
+    padding-right: fluid(30px, 30px);
+    border-right: 1px solid var(--border);
+  }
+
+  &:nth-child(even) {
+    padding-left: fluid(30px, 30px);
+  }
+
+  &:nth-child(-n + 2) {
+    padding-bottom: fluid(40px, 60px);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: calc(fluid(40px, 60px) * -1);
+  }
+
+  @include down(md) {
+    &:nth-child(n) {
+      margin: 0;
+      padding: 0 0 20px;
+      border-right: 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+}
+
+.valueHead {
+  display: flex;
+  align-items: center;
+  gap: fluid(10px, 14px);
+
+  h3 {
+    @include title-sm;
+  }
+}
+
+.valueIcon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: fluid(58px, 74px);
+  aspect-ratio: 1;
+  border: 1px solid var(--purple-60);
+  border-radius: 50%;
+  background-color: var(--bg);
+  color: var(--purple-75);
+
+  svg {
+    width: fluid(24px, 34px);
+    height: auto;
+  }
+
+  @include down(md) {
+    width: 48px;
+
+    svg {
+      width: 20px;
+    }
+  }
+}
+
+.achievements {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: fluid(30px, 40px);
+
+  @include down(lg) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 6px;
+  }
+}
+
+.achievement {
+  display: flex;
+  flex-direction: column;
+  gap: fluid(20px, 30px);
+  padding: fluid(40px, 50px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg);
+  box-shadow: 0 0 0 fluid(6px, 10px) #191919;
+
+  h3 {
+    @include title-md;
+  }
+
+  p {
+    @include text-base;
+    color: var(--text-muted);
+  }
+
+  @include down(md) {
+    gap: 16px;
+    padding: 30px;
+    box-shadow: 0 0 0 4px #191919;
+  }
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: fluid(40px, 50px) fluid(20px, 30px);
+  padding: 0;
+  list-style: none;
+
+  @include down(lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include down(md) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 30px;
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepNumber {
+  @include text-lg;
+  padding: fluid(14px, 16px) 20px;
+  border-left: 1px solid var(--purple-60);
+}
+
+.stepBody {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: fluid(14px, 20px);
+  padding: fluid(40px, 50px);
+  border: 1px solid var(--border);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) var(--radius-lg);
+  background: linear-gradient(140deg, rgb(112 59 247 / 0.32) 0%, rgb(112 59 247 / 0) 26%);
+
+  // purple fade over the top-left corner of the border
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(140deg, var(--purple-60) 0%, rgb(112 59 247 / 0) 22%);
+    mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  h3 {
+    font-size: fluid(20px, 26px);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  p {
+    @include text-base;
+    color: var(--text-muted);
+  }
+
+  @include down(md) {
+    padding: 30px;
+
+    h3 {
+      font-size: 18px;
+    }
+  }
+}
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: fluid(20px, 30px);
+
+  @include down(lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @include down(md) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.clients {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: fluid(20px, 50px);
+  padding: fluid(6px, 10px);
+
+  @include down(lg) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

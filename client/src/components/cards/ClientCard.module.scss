@@ -1,0 +1,119 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: fluid(30px, 40px);
+  height: 100%;
+  padding: fluid(40px, 50px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg);
+  box-shadow: 0 0 0 fluid(6px, 10px) #191919;
+
+  @include down(md) {
+    gap: 24px;
+    padding: 24px;
+    box-shadow: 0 0 0 4px #191919;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  @include down(md) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+}
+
+.since {
+  @include text-base;
+  color: var(--text-muted);
+}
+
+.name {
+  @include title-md;
+  margin-top: 6px;
+}
+
+.visit {
+  @include text-sm;
+  flex-shrink: 0;
+  padding: fluid(14px, 18px) fluid(20px, 24px);
+  border: 1px solid var(--border);
+  border-radius: fluid(8px, 10px);
+  background-color: var(--surface);
+  text-align: center;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--grey-15);
+  }
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+
+    & + div {
+      padding-left: fluid(20px, 30px);
+      border-left: 1px solid var(--border);
+    }
+  }
+
+  dt {
+    @include text-base;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+
+    svg {
+      width: 24px;
+      height: auto;
+      flex-shrink: 0;
+    }
+  }
+
+  dd {
+    @include text-lg;
+    margin: 0;
+  }
+
+  @include down(md) {
+    > div + div {
+      padding-left: 16px;
+    }
+  }
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: fluid(24px, 30px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  p {
+    @include text-base;
+  }
+
+  @include down(md) {
+    padding: 20px;
+  }
+}
+
+.quoteLabel {
+  color: var(--text-muted);
+}
