@@ -1,0 +1,36 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block: fluid(100px, 160px) 40px;
+  text-align: center;
+}
+
+.code {
+  font-size: clamp(96px, 14vw, 200px);
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(180deg, var(--purple-75), rgb(112 59 247 / 0.1));
+  background-clip: text;
+  color: transparent;
+}
+
+.title {
+  @include title-lg;
+  margin-top: 20px;
+}
+
+.text {
+  @include text-base;
+  max-width: 560px;
+  margin-top: 14px;
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 40px;
+}
