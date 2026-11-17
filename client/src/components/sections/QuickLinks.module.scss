@@ -1,0 +1,94 @@
+.strip {
+  padding: fluid(10px, 20px);
+  border-block: 1px solid var(--border);
+  background-color: var(--bg);
+  box-shadow: 0 0 0 fluid(6px, 10px) #191919;
+
+  @include down(md) {
+    margin-inline: var(--gutter);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 0 0 6px #191919;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: fluid(10px, 20px);
+
+  @include down(lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: fluid(16px, 20px);
+  height: 100%;
+  padding: fluid(30px, 40px) 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background-color: var(--surface);
+  text-align: center;
+  transition:
+    border-color 0.25s,
+    background-color 0.25s;
+
+  @include down(md) {
+    gap: 14px;
+    padding: 20px 14px;
+    border-radius: var(--radius-md);
+  }
+}
+
+.link:hover {
+  border-color: var(--grey-20);
+  background-color: #1f1f1f;
+
+  .arrow {
+    color: var(--white);
+    transform: translate(3px, -3px);
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: fluid(14px, 20px);
+  right: fluid(14px, 20px);
+  width: fluid(24px, 34px);
+  height: auto;
+  color: var(--grey-30);
+  transition:
+    transform 0.25s var(--ease),
+    color 0.25s;
+
+  @include down(md) {
+    top: 14px;
+    right: 14px;
+    width: 26px;
+  }
+}
+
+.title {
+  font-size: fluid(16px, 20px);
+  font-weight: 600;
+  line-height: 1.5;
+
+  @include down(md) {
+    font-size: 14px;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+
+    &:hover {
+      color: var(--purple-75);
+    }
+  }
+}

@@ -1,0 +1,113 @@
+.card {
+  @include card(fluid(30px, 40px));
+  display: flex;
+  flex-direction: column;
+  gap: fluid(30px, 30px);
+  height: 100%;
+
+  @include down(md) {
+    gap: 16px;
+  }
+}
+
+.media {
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  aspect-ratio: 432 / 318;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s var(--ease);
+  }
+
+  .card:hover & img {
+    transform: scale(1.04);
+  }
+
+  @include down(md) {
+    aspect-ratio: 310 / 210;
+  }
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: fluid(16px, 20px);
+}
+
+.tagline {
+  align-self: flex-start;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title {
+  @include title-sm;
+
+  a:hover {
+    color: var(--purple-75);
+  }
+}
+
+.text {
+  @include text-base;
+  margin-top: 6px;
+  color: var(--text-muted);
+
+  @include down(md) {
+    margin-top: 2px;
+  }
+}
+
+.more {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 6px;
+
+  @include up(xxl) {
+    gap: 10px;
+  }
+}
+
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: fluid(30px, 50px);
+  margin-top: auto;
+
+  @include down(md) {
+    gap: 20px;
+  }
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  span {
+    @include text-sm;
+    color: var(--text-muted);
+  }
+
+  strong {
+    @include title-sm;
+  }
+}
+
+.button {
+  flex: 1;
+  max-width: 280px;
+}

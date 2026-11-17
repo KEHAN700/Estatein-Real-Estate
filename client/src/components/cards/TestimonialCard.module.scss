@@ -1,0 +1,50 @@
+.card {
+  @include card(fluid(40px, 50px));
+  display: flex;
+  flex-direction: column;
+  gap: fluid(30px, 40px);
+  height: 100%;
+
+  @include down(md) {
+    gap: 24px;
+    padding: 30px;
+  }
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  gap: fluid(10px, 14px);
+
+  p {
+    @include text-base;
+  }
+}
+
+.title {
+  @include title-sm;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+
+  img {
+    width: fluid(50px, 60px);
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+.name {
+  @include text-lg;
+}
+
+.location {
+  @include text-sm;
+  color: var(--text-muted);
+}

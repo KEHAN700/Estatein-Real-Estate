@@ -1,0 +1,133 @@
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: fluid(60px, 80px);
+
+  @include down(lg) {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: fluid(50px, 60px);
+  padding: fluid(60px, 100px) 0 fluid(60px, 100px) var(--gutter);
+
+  @include down(lg) {
+    padding: 24px var(--gutter) 60px;
+  }
+
+  @include down(md) {
+    gap: 40px;
+    padding-block: 16px 40px;
+  }
+}
+
+.intro {
+  max-width: 758px;
+}
+
+.title {
+  font-size: fluid(46px, 60px);
+  font-weight: 600;
+  line-height: 1.2;
+
+  @include down(md) {
+    font-size: 28px;
+  }
+}
+
+.text {
+  @include text-base;
+  margin-top: fluid(20px, 24px);
+  color: var(--text-muted);
+
+  @include down(md) {
+    margin-top: 16px;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: fluid(16px, 20px);
+
+  @include down(md) {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: fluid(16px, 20px);
+  max-width: 758px;
+
+  @include down(md) {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+
+    > :last-child {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.visual {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--surface);
+  @include pattern('lines');
+  background-position: right -75px top -200px;
+  background-size: 210% auto;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgb(42 33 63 / 0.06) 0%, rgb(25 25 25 / 0) 49%);
+    pointer-events: none;
+  }
+
+  img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @include down(lg) {
+    order: -2;
+    margin-inline: var(--gutter);
+    aspect-ratio: 358 / 302;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+  }
+
+  @include down(md) {
+    margin-top: 40px;
+  }
+}
+
+// sits on the seam between text and picture
+.badge {
+  position: absolute;
+  top: fluid(95px, 144px);
+  left: 50%;
+  translate: fluid(-35px, -50px) 0;
+
+  @include down(lg) {
+    position: relative;
+    top: auto;
+    left: auto;
+    z-index: 1;
+    order: -1;
+    translate: none;
+    margin: -64px 0 0 var(--gutter);
+  }
+}
