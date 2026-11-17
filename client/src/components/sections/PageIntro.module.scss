@@ -1,0 +1,32 @@
+.intro {
+  position: relative;
+  padding-block: fluid(80px, 150px) fluid(80px, 100px);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(140deg, var(--grey-15) 0%, rgb(38 38 38 / 0) 53%);
+
+  @include down(md) {
+    padding-block: 40px;
+  }
+
+  :global(.container) {
+    padding-right: max(var(--gutter), fluid(300px, 400px));
+
+    @include down(lg) {
+      padding-right: var(--gutter);
+    }
+  }
+}
+
+.title {
+  @include title-lg;
+}
+
+.text {
+  @include text-base;
+  margin-top: 14px;
+  color: var(--text-muted);
+
+  @include down(md) {
+    margin-top: 6px;
+  }
+}
