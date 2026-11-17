@@ -2,6 +2,10 @@
 
 A responsive real estate website built from the Estatein Figma design: six pages, a REST API and working forms.
 
+**Live demo:** [estatein-real-estate-weld.vercel.app](https://estatein-real-estate-weld.vercel.app) · API: [estatein-api.onrender.com](https://estatein-api.onrender.com/api/health)
+
+> The API runs on Render's free plan and sleeps when idle, so the first load can take up to a minute.
+
 **Stack:** React 18, TypeScript, Vite, React Router, TanStack Query, React Hook Form + Zod, SCSS Modules · Node.js, Express, Zod
 
 ## Features
@@ -41,6 +45,11 @@ npm run dev
 - API: http://localhost:4000
 
 Vite proxies `/api` and `/images` to the API in development.
+
+### Deployment
+
+- **API** — Render, configured in `render.yaml`. Set `CLIENT_ORIGIN` to the frontend URL.
+- **Frontend** — Vercel with `client` as the root directory (`client/vercel.json`). Set `VITE_API_URL` to the API URL.
 
 ### Production build
 
