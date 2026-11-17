@@ -1,0 +1,72 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: fluid(30px, 40px);
+  height: 100%;
+  padding: fluid(40px, 50px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background-color: var(--bg);
+
+  @include down(md) {
+    gap: 24px;
+    padding: 24px;
+  }
+}
+
+.label {
+  @include text-base;
+}
+
+.address {
+  @include title-md;
+  margin-top: 10px;
+}
+
+.text {
+  @include text-base;
+  margin-top: 14px;
+  color: var(--text-muted);
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  a,
+  span {
+    @include text-sm;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: fluid(10px, 14px) fluid(16px, 20px);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    background-color: var(--surface);
+  }
+
+  a:hover {
+    border-color: var(--grey-20);
+  }
+
+  svg {
+    width: fluid(20px, 24px);
+    height: auto;
+  }
+}
+
+.direction {
+  @include text-sm;
+  display: block;
+  margin-top: auto;
+  padding: fluid(14px, 18px) 24px;
+  border-radius: fluid(8px, 10px);
+  background-color: var(--purple-60);
+  text-align: center;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: var(--purple-65);
+  }
+}
